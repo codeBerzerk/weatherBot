@@ -16,7 +16,7 @@ function App() {
         return () => {
             tg.MainButton.offClick(handleSendToTelegram);
         };
-    }, [weather]);
+    }, [weather, handleSendToTelegram]);
 
     const handleSendToTelegram = useCallback(() => {
         if (weather) {

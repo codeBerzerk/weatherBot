@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import CitySelector from './Components/CitySelector/CitySelector';
-import WeatherDisplay from './Components/WeatherDisplay/WeatherDisplay';
+import CitySelector from './Components/CitySelector/CitySelector.jsx';
+import WeatherDisplay from './Components/WeatherDisplay/WeatherDisplay.jsx';
 
 function App() {
     const [weather, setWeather] = useState(null);

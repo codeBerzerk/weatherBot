@@ -3,6 +3,7 @@ import CitySelector from './Components/CitySelector/CitySelector.jsx';
 import WeatherDisplay from './Components/WeatherDisplay/WeatherDisplay.jsx';
 
 function App() {
+    const [setCity] = useState('');
     const [weather, setWeather] = useState(null);
 
     const handleSendToTelegram = useCallback(() => {

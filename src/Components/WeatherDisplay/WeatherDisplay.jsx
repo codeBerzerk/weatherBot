@@ -1,6 +1,8 @@
 import React from 'react';
 
 function WeatherDisplay({ weather }) {
+    if (!weather) return null;
+
     return (
         <div>
             <h2>Weather in {weather.name}</h2>

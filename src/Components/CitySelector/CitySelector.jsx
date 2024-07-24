@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Select from 'react-select';
+import './CitySelector.css';
 
 const API_KEY = 'b07f4db17b7f7b1dd6eeeb010dcb28c0';
 
@@ -40,7 +41,7 @@ function CitySelector({ setWeather }) {
     };
 
     return (
-        <div>
+        <div className='formContainer'>
             <Select
                 value={selectedCity}
                 onChange={handleChange}

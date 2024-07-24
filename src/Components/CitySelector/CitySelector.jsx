@@ -20,6 +20,8 @@ function CitySelector({ setWeather }) {
                     setOptions(cities);
                 })
                 .catch(error => console.error('Error fetching city data:', error));
+        } else {
+            setOptions([]);
         }
     }, [inputValue]);
 
@@ -45,6 +47,11 @@ function CitySelector({ setWeather }) {
                 onInputChange={setInputValue}
                 options={options}
                 placeholder="Type city name..."
+                isClearable
+                onClear={() => {
+                    setSelectedCity(null);
+                    setWeather(null);
+                }}
             />
         </div>
     );

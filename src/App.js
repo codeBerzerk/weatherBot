@@ -6,18 +6,6 @@ function App() {
     const [setCity] = useState('');
     const [weather, setWeather] = useState(null);
 
-    useEffect(() => {
-        const tg = window.Telegram.WebApp;
-        tg.ready();
-
-        tg.MainButton.setParams({ text: "Send to Telegram" });
-        tg.MainButton.onClick(handleSendToTelegram);
-
-        return () => {
-            tg.MainButton.offClick(handleSendToTelegram);
-        };
-    }, [weather, handleSendToTelegram]);
-
     const handleSendToTelegram = useCallback(() => {
         if (weather) {
             const message = `
@@ -31,6 +19,18 @@ function App() {
             window.Telegram.WebApp.sendData(message);
         }
     }, [weather]);
+
+    useEffect(() => {
+        const tg = window.Telegram.WebApp;
+        tg.ready();
+
+        tg.MainButton.setParams({ text: "Send to Telegram" });
+        tg.MainButton.onClick(handleSendToTelegram);
+
+        return () => {
+            tg.MainButton.offClick(handleSendToTelegram);
+        };
+    }, [weather, handleSendToTelegram]);
 
     return (
         <div className="App">

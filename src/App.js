@@ -3,7 +3,7 @@ import CitySelector from './Components/CitySelector/CitySelector';
 import WeatherDisplay from './Components/WeatherDisplay/WeatherDisplay';
 
 function App() {
-    const [city, setCity] = useState('');
+    const [setCity] = useState('');
     const [weather, setWeather] = useState(null);
 
     useEffect(() => {
